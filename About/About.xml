@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+ <name>Androids Droid Temperature Fix</name>
+ <author>Community</author>
+ <packageId>Community.AndroidsDroidTemperatureFix</packageId>
+ <supportedVersions><li>1.7</li></supportedVersions>
+ <description>Stops Androids ChjDroid pawns from developing hypothermia or heatstroke. Existing hypothermia and heatstroke are removed during health interval ticks. Other races and health conditions are not intentionally changed.</description>
+ <modDependencies>
+  <li><packageId>brrainz.harmony</packageId><displayName>Harmony</displayName><steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl></li>
+  <li><packageId>ChJees.Androids14</packageId><displayName>Androids</displayName><steamWorkshopUrl>steam://url/CommunityFilePage/2889326293</steamWorkshopUrl></li>
+ </modDependencies>
+ <loadAfter><li>brrainz.harmony</li><li>ChJees.Androids14</li></loadAfter>
+</ModMetaData>

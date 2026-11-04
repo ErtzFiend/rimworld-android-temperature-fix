@@ -1,0 +1,43 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Verify compiled assembly
+        run: |
+          if [ ! -f "Assemblies/AndroidsHypothermiaFix.dll" ]; then
+            echo "Assemblies/AndroidsHypothermiaFix.dll missing!"
+            exit 1
+          fi
+          sha256sum Assemblies/AndroidsHypothermiaFix.dll
+
+      - name: Package Release
+        run: |
+          mkdir -p staging/AndroidsTemperatureFix/About staging/AndroidsTemperatureFix/Assemblies
+          cp -r About/* staging/AndroidsTemperatureFix/About/
+          cp Assemblies/AndroidsHypothermiaFix.dll staging/AndroidsTemperatureFix/Assemblies/
+          cd staging
+          zip -r ../AndroidsTemperatureFix.zip AndroidsTemperatureFix
+          cd ..
+          unzip -l AndroidsTemperatureFix.zip
+          sha256sum AndroidsTemperatureFix.zip
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: AndroidsTemperatureFix.zip
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

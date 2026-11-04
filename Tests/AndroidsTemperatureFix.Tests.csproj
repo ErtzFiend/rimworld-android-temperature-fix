@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <NoWarn>SYSLIB0050</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Reference Include="Assembly-CSharp">
+      <HintPath>/root/rimworld_libs/Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>/root/rimworld_libs/0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="AndroidsHypothermiaFix">
+      <HintPath>../bin/Debug/net10.0/AndroidsHypothermiaFix.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

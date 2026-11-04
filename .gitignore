@@ -1,0 +1,12 @@
+# Build output and intermediate files
+bin/
+obj/
+
+# Track only this project's compiled mod; never commit game or Harmony DLLs.
+Assemblies/*.dll
+!Assemblies/AndroidsHypothermiaFix.dll
+
+# IDE/user-specific files
+.vs/
+*.user
+*.suo
