@@ -3,7 +3,8 @@
 Targeted behavioral tests against RimWorld 1.7 assemblies and Harmony runtime are located in `Tests/`.
 Run with:
 ```sh
-dotnet run --project Tests/AndroidsTemperatureFix.Tests.csproj -p:GameManagedDir=/path/to/game_libs
+export RIMWORLD_MANAGED=/path/to/game_libs
+dotnet run --project Tests/AndroidsTemperatureFix.Tests.csproj -c Release -p:GameManagedDir="$RIMWORLD_MANAGED"
 ```
 
 Controls verified:
