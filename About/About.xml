@@ -4,6 +4,7 @@
  <author>Community</author>
  <packageId>Community.AndroidsDroidTemperatureFix</packageId>
  <supportedVersions><li>1.7</li></supportedVersions>
+  <publishedFileId>3835640649</publishedFileId>
   <modVersion>1.0.1</modVersion>
  <description>Stops Androids ChjDroid pawns from developing hypothermia or heatstroke. Existing hypothermia and heatstroke are removed during health interval ticks. Other races and health conditions are not intentionally changed.</description>
  <modDependencies>
